@@ -1,0 +1,4 @@
+
+#!/bin/bash
+
+cat /home/tareef/scripts/ListEmojis | dmenu | tr -d "*" | grep -i -f "-" /home/tareef/scripts/unicode | dmenu | awk '{print $1}' | tr -d "\n" | xclip -i -selection clipboard ; notify-send "$(xclip -o -selection clipboard) was copied to the clipboard"
